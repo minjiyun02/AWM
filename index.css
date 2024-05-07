@@ -56,6 +56,40 @@
     margin-right: 20px;
 }
 
+.nav-item.dropdown:hover {
+    background-color: #498ca6; /* Change background color when hovered */
+    display: block; /* Ensure it looks like a block */
+}
+
+.dropdown a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Background color of the dropdown menu items on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 
 /*============================== HEADER END ==============================*/
@@ -87,14 +121,14 @@
 .about-title {
     margin-top: 16px;
     font: 700 40px Roboto, sans-serif;
-    word-wrap: break-word; /* Add this line */
+    word-wrap: break-word; 
     padding-left: 70px;
 }
 
 .about-description {
     margin: 60px 0;
     font: 400 20px Roboto, sans-serif;
-    overflow-wrap: break-word; /* Add this line */
+    overflow-wrap: break-word; 
     padding-left: 70px;
     padding-right: 70px;
     line-height: 1.5;
@@ -104,11 +138,11 @@
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding: 80px 0; /* Adjusted padding */
+    padding: 80px 0; 
     background-color: #c1d9c2;
     width: 100%;
     color: #000;
-    box-sizing: border-box; /* Ensure padding is included in the width */
+    box-sizing: border-box; 
 }
 
 .announcements-title {
@@ -235,79 +269,165 @@
     text-decoration: none;
 }
 
-
-@media (max-width: 991px) {
+@media only screen and (max-width: 480px) {
     .header {
         flex-wrap: wrap;
         padding: 0 20px;
         max-width: 100%;
     }
 
-    .nav-menu {
+    .logo-container {
+        padding: 10px 0;
+    }
+
+    .logo-text {
+        display: flex;
+        align-items: center;
+        gap: 0px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .header {
         flex-wrap: wrap;
+        padding: 0 20px;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        padding: 20px 0;
+    }
+
+    .logo-text {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .nav-item {
+        margin: 0 8px; /* Add some space between nav items */
+    }
+
+    .nav-menu{
+        margin-bottom: 30px;
+        display: flex;
+        padding-left: 0;
     }
 
     .hero-section {
-        padding: 40px 20px;
+        height: auto;
         max-width: 100%;
     }
 
     .about-section {
-        padding: 0 20px;
+        padding: 0;
         max-width: 100%;
+        align-items: left;
     }
 
     .about-title {
         max-width: 100%;
+        font-size: 28px;
+        padding-top: 50px;
     }
 
     .about-description {
-        margin-top: 40px;
+        margin-top: 30px;
         max-width: 100%;
+        font-size: 16px;
     }
 
     .announcements-section {
-        padding: 0 20px;
+        padding: 0;
         max-width: 100%;
     }
 
     .announcements-title {
         max-width: 100%;
+        font-size: 28px;
+        padding-top: 50px;
     }
 
     .announcements-list {
-        margin-top: 40px;
+        margin-top: 20px;
+        margin-bottom: 50px;
         max-width: 100%;
+        font-size: 16px;
+    }
+
+    .double-indented {
+        margin-left: 0px; 
     }
 
     .footer {
+        box-sizing: border-box;
         padding: 0 20px;
-        max-width: 100%;
+        width: 100%;
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .footer-title {
+        margin-top: 50px;
+        padding: 0;
+        margin-left: 10px;
+        overflow-wrap: break-word; 
     }
 
     .footer-content {
+        display: flex;
         flex-direction: column;
-        align-items: stretch;
-        gap: 0px;
     }
 
     .footer-column {
+        flex: 1;
         width: 100%;
     }
-
-    .footer-column-2 {
+    .footer-column-2{
+        padding-top: 20px;
         width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-left: 0; 
     }
-
+    .footer-column-3 {
+        padding-top: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        margin-left: 0; 
+        margin-bottom: 50px;
+    }
     .footer-contact {
-        margin-top: 40px;
+        margin-top: 20px;
+        align-items: center;
     }
 
     .footer-socials {
-        white-space: initial;
+       margin-left: 0;
     }
 
     .footer-menu {
         margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        gap: 25px;
+        justify-content: center;
+        padding-left: 0;
     }
+    
+    .footer-menu-item {
+        padding-left: 20px;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+
 }
